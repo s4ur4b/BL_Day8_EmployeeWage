@@ -41,7 +41,9 @@ class DailyWage{
 
 
         } else {
-            System.out.println("Employee is Absent");
+            workingHour=4;
+            System.out.println("Employee is Part-time");
+            wage=wagePerHour*workingHour;
             System.out.println("Daily wage of Employee: "+wage+" Rs ");
         }
     }
