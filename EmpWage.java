@@ -33,18 +33,19 @@ class DailyWage{
     void selection() {
         int check = (int) ThreadLocalRandom.current().nextInt(0, 2);
         System.out.println(check);
-        if (check == empFullTime) {
-                workingHour=8;
+        switch (check){
+            case 0:     workingHour=8;
             System.out.println("Employee is Full-time");
             wage=wagePerHour*workingHour;
             System.out.println("Daily wage of Employee: "+wage);
+            break;
 
-
-        } else {
+            case 1:
             workingHour=4;
             System.out.println("Employee is Part-time");
             wage=wagePerHour*workingHour;
             System.out.println("Daily wage of Employee: "+wage+" Rs ");
+            break;
         }
     }
 }
