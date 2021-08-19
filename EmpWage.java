@@ -4,8 +4,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class EmpWage {
     public static void main(String[] args) {
-            DailyWage object = new DailyWage();
-            object.selection();
+           EmployeeWageMaxHours  object = new EmployeeWageMaxHours();
+            object.selectionMax();
     }
 }
 class Attendance{
@@ -53,5 +53,31 @@ class DailyWage{
                 System.out.println("Monthly wage of Employee: "+monthlyWage);
             break;
         }
+    }
+}
+
+class EmployeeWageMaxHours {
+    public static final int partTime=1, fullTime=2, empRatePerHour=20, workingDays=20, maxHoursInMonth=100;
+
+    void selectionMax(){
+        int empHours, totalWorkingDays = 0, totalEmpHours = 0;
+        while(totalEmpHours<maxHoursInMonth && totalWorkingDays<workingDays){
+            totalWorkingDays++;
+            int empCheck = (int) Math.floor(Math.random()*10%3);
+            switch (empCheck){
+                case partTime:
+                    empHours=4;
+                    break;
+                case fullTime:;
+                    empHours=8;
+                    break;
+                default:
+                    empHours=0;
+            }
+            totalEmpHours += empHours;
+            System.out.println("Total working Days"+totalWorkingDays+"Total working Hours"+totalEmpHours);
+        }
+        int totalEmpWage = empRatePerHour * totalEmpHours;
+        System.out.println("Total Employee Wage: "+totalEmpWage);
     }
 }
