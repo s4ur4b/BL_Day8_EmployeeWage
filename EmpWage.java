@@ -26,10 +26,12 @@ class Attendance{
 }
 
 class DailyWage{
-    int empFullTime=0;
-    int wagePerHour=20;
-    int workingHour=0;
-    int wage=0;
+    private int empFullTime=0;
+    private int wagePerHour=20;
+    private int workingHour=0;
+    private int wage=0;
+    private int monthlyWage=0;
+    private int monthDays=20;
     void selection() {
         int check = (int) ThreadLocalRandom.current().nextInt(0, 2);
         System.out.println(check);
@@ -38,6 +40,8 @@ class DailyWage{
             System.out.println("Employee is Full-time");
             wage=wagePerHour*workingHour;
             System.out.println("Daily wage of Employee: "+wage);
+            monthlyWage=wage*monthDays;
+                System.out.println("Monthly wage of Employee: "+monthlyWage);
             break;
 
             case 1:
@@ -45,6 +49,8 @@ class DailyWage{
             System.out.println("Employee is Part-time");
             wage=wagePerHour*workingHour;
             System.out.println("Daily wage of Employee: "+wage+" Rs ");
+                monthlyWage=wage*monthDays;
+                System.out.println("Monthly wage of Employee: "+monthlyWage);
             break;
         }
     }
